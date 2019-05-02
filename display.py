@@ -1,8 +1,6 @@
 #!/usr/bin/env python3
 
 from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QVBoxLayout, QLabel, QHBoxLayout, QLineEdit
-import urllib.request
-import json
 
 middleend_host = "127.0.0.1"
 middleend_port = "80"
@@ -25,7 +23,6 @@ pass_layout.addWidget(password_label)
 pass_layout.addWidget(password)
 
 send_btn = QPushButton("Login")
-#button has no action to avoid crash
 
 response = QLabel("")
 
@@ -39,12 +36,3 @@ window.show()
 
 app.exec_()
 
-def login(login, password):
-    auth = {'username':[username], 'password':[password]}
-    req = urllib.request.Request(middleend_host+"/auth/password")
-    req.add_header('Content-Type', 'application/json; charset=utf-8')
-    jsondata = json.dumps(auth)
-    jsondata_bytes = jsondata.encode('utf-8')
-    req.add_header('Content-Length', len(jsondata_bytes))
-    auth_token_json = urllib.request.urlopen(req, jsondata_bytes)
-    #not sure how to parse errors
