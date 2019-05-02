@@ -2,9 +2,6 @@
 
 from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QVBoxLayout, QLabel, QHBoxLayout, QLineEdit
 
-middleend_host = "127.0.0.1"
-middleend_port = "80"
-
 app = QApplication([])
 window = QWidget()
 layout = QVBoxLayout()
