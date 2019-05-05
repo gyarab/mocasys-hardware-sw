@@ -35,6 +35,6 @@ def db_query(session_token, query, data):
         params = params
         headers = session_token
         )
-    json_response = respone.json()
+    json_response = response.json()
     return json_response
 
